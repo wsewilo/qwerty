@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.:Zaj8N:></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.css">
+    <style>
+        /* CSS comments */
+        .container{
+            --w: 75vw;
+            --h: 90vh;
+            --block: 10vw;
+            --half: calc((var(--w) / 2) - (var(--block) / 2));
+            margin: 20px auto;
+            width: var(--w);
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .block{
+            width: var(--block);
+            height: var(--block);
+            text-align: center;
+            line-height: var(--block);
+            background-color: #642;
+            color: #fff;
+            animation: anim2 6s linear infinite;
+            /* animation: none; */
+        }
+        @keyframes anim2{
+            from, to{
+                border-radius: 0;
+                transform: translateX(0) rotate(0deg);
+                background-color: #a00;
+            }
+            25%, 75%{
+                border-radius: 30%;
+                transform: translateX(var(--half)) rotate(180deg);
+                background-color: #0a0;
+            }
+            50%{
+                border-radius: 50%;
+                transform: translateX(calc(var(--w) - var(--block))) rotate(360deg);
+                background-color: #00a;
+            }
+        }
+        .main, 
+        .footer{
+            height: var(--h);
+            /* background-color: bisque; */
+            background-image: url("https://images.pexels.com/photos/16747126/pexels-photo-16747126.jpeg");
+            /* background-size: 100% 100%; */
+            background-size: var(--w) var(--h);
+            background-repeat: no-repeat;
+            background-position: center 20px;
+            background-attachment: fixed;
+        }
+        .section{
+            height: var(--h);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+        .section .img{
+            margin: 1%;
+            width: 31%;
+            overflow: hidden;
+        }
+        .img img{
+            width: 100%;
+            transition: 1s ease-in-out;
+        }
+        .img img:hover{
+            transform: scale(1.5);
+            filter: sepia(1.33) contrast(1.25);
+            cursor: pointer;
+        }
+        .footer{
+            background-image: url("https://images.pexels.com/photos/28532918/pexels-photo-28532918.jpeg");
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML comments -->
+
+    <!-- .container>(main.main>h1{Company Name}+h2{Description text}+button.btn#btn$*2)+(section.section>(.img>img)*6)+footer>.icons>a.icon*4^p.p{Page Footer &copy; WS} -->
+    <div class="container">
+        <main class="main">
+            <div class="block" id="block">Anim</div>
+            <h1>Company Name</h1>
+            <h2>Description text</h2>
+            <button class="btn" id="btn1">Color Mode</button>
+            <button class="btn" id="btn2">Animation</button>
+        </main>
+        <section class="section">
+            <div class="img"><img src="https://images.pexels.com/photos/16747126/pexels-photo-16747126.jpeg" alt="Obraz - most Golden Gate"></div>
+            <div class="img"><img src="https://images.pexels.com/photos/16747126/pexels-photo-16747126.jpeg" alt="Obraz - most Golden Gate"></div>
+            <div class="img"><img src="https://images.pexels.com/photos/16747126/pexels-photo-16747126.jpeg" alt="Obraz - most Golden Gate"></div>
+            <div class="img"><img src="https://images.pexels.com/photos/16747126/pexels-photo-16747126.jpeg" alt="Obraz - most Golden Gate"></div>
+            <div class="img"><img src="https://images.pexels.com/photos/16747126/pexels-photo-16747126.jpeg" alt="Obraz - most Golden Gate"></div>
+            <div class="img"><img src="https://images.pexels.com/photos/16747126/pexels-photo-16747126.jpeg" alt="Obraz - most Golden Gate"></div>
+        </section>
+        <footer class="footer">
+            <div class="icons">
+                <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <p class="p">Page Footer &copy; WS</p>
+        </footer>
+    </div>
+
+    
+    <script>
+
+
+        const btn1 = document.getElementById("btn1");
+        
+
+        // JS comments
+        document.getElementById('ico')
+        .addEventListener('click')
+        const btn = document.getElementById('btn')  
+        // const btn = document.querySelector('#btn')
+        const anim = document.getElementById('block')
+        var counter = false
+       
+        function start_stop() {
+            if (counter==false){
+                anim.style.animation = "none"
+            }
+            else{
+                anim.style.animation = "anim2 6s linear infinite"
+            }
+            counter=!counter
+        }
+
+    </script>
+</body>
+</html>
